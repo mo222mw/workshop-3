@@ -1,6 +1,6 @@
-import BlackJack.model.Game;
-import BlackJack.view.*;
-import BlackJack.controller.*;
+import model.Game;
+import view.*;
+import controller.*;
 
 public class Program
 {
@@ -10,7 +10,7 @@ public class Program
   
     Game g = new Game();
     IView v = new SimpleView(); //new SwedishView();
-    PlayGame ctrl = new PlayGame();
+    PlayGame ctrl = new PlayGame(g, v);
     
     while (ctrl.Play(g, v));
   }

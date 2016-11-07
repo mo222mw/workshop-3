@@ -1,12 +1,21 @@
 package model.rules;
 
-public class RulesFactory {
+public class RulesFactory
+{
+    public IHitStrategy GetHitRule()
+    {
+        return new Soft17HitStrategy();
+    }
 
-  public IHitStrategy GetHitRule() {
-    return new BasicHitStrategy();
-  }
+    public INewGameStrategy GetNewGameRule()
+    {
+        return new AmericanNewGameStrategy();
+    }
 
-  public INewGameStrategy GetNewGameRule() {
-    return new AmericanNewGameStrategy();
-  }
+    public IWinStrategy GetWinnerStragety()
+    {
+        return new OnEqualPlayerWinStrategy();
+    }
+
+
 }
